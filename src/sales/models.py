@@ -4,6 +4,7 @@ from customers.models import Customer
 from profiles.models import Profile
 from django.utils import timezone
 from django.shortcuts import reverse
+from .utils import generate_code
 
 
 class Position(models.Model):
@@ -45,7 +46,7 @@ class Sale(models.Model):
 
     def save(self, *args, **kwargs):
         if self.transaction_id == "":
-            self.transaction_id = ''
+            self.transaction_id = generate_code()
         if self.created_at is None:
             self.created_at = timezone.now()
         return super().save(*args, **kwargs)
