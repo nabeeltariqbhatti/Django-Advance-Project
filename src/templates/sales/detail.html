@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-sales list
+ detail {{object.transaction_id}}
 {% endblock title %}
 {%block content %}
-{% for obj in qs %}
-   <a href="/sales/{{obj.pk}}"> {{obj.transaction_id}}</a>
-{% endfor %}
+
+{{object.pk}}
+<br>
+{{object.name}}
+{{object.transaction_id}}
 {%endblock content %}
