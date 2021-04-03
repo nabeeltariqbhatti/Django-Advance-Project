@@ -5,6 +5,11 @@ sales list
 {% endblock title %}
 {%block content %}
 {% for obj in qs %}
-   <a href="/sales/{{obj.pk}}"> {{obj.transaction_id}}</a>
+  <div class="card mb-3">
+
+        <a href="/sales/{{obj.pk}}" class="card-body"> {{obj.transaction_id}}</a>
+
+  </div>
+
 {% endfor %}
 {%endblock content %}
